@@ -19,6 +19,7 @@ services:
     volumes:
       - ${HOME}/Data/pihole/pihole:/etc/pihole/
       - ${HOME}/Data/pihole/dnsmasq/:/etc/dnsmasq.d/
+      - ${HOME}/Data/pihole/log/:/var/log/
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
