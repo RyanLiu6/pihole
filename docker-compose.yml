@@ -23,6 +23,7 @@ services:
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
+      - SYS_NICE
       - NET_ADMIN
     labels:
       - "traefik.enable=true"
