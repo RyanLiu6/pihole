@@ -17,11 +17,15 @@ services:
       - 67:67/udp
       - 11080:80/tcp
     environment:
-      - TZ=America/Chicago
-      - WEBPASSWORD=${PASSWORD}
+      TZ: America/Chicago
+      WEBPASSWORD: ${PASSWORD}
+      PROXY_LOCATION: pihole
+      VIRTUAL_HOST: ${DNS_DOMAIN}
+      VIRTUAL_PORT: 80
     volumes:
       - ${HOME}/Data/pihole/pihole:/etc/pihole/
       - ${HOME}/Data/pihole/dnsmasq/:/etc/dnsmasq.d/
+      - ${HOME}/Data/pihole/pihole.log:/var/log/pihole.log
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
