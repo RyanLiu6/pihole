@@ -14,8 +14,10 @@ services:
       - 67:67/udp
       - 11080:80/tcp
     environment:
-      TZ: 'America/Chicago'
-      WEBPASSWORD: ${PASSWORD}
+      - TZ=America/Chicago
+      - WEBPASSWORD=${PASSWORD}
+      - DNS1=127.0.0.1
+      - DNS2=1.1.1.1
     volumes:
       - ${HOME}/Data/pihole/pihole:/etc/pihole/
       - ${HOME}/Data/pihole/dnsmasq/:/etc/dnsmasq.d/
