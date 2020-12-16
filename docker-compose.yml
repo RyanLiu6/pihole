@@ -17,8 +17,8 @@ services:
       TZ: 'America/Chicago'
       WEBPASSWORD: ${PASSWORD}
     volumes:
-      - ${HOME}/Data/pihole/etc-pihole:/etc/pihole/
-      - ${HOME}/Data/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
+      - ${HOME}/Data/pihole/pihole:/etc/pihole/
+      - ${HOME}/Data/pihole/dnsmasq/:/etc/dnsmasq.d/
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
